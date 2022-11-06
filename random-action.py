@@ -1,17 +1,3 @@
-# sheepsheep
-sheepsheep game environment
-![](demo.png)
-
-# Interactive mode
-```python
-import sheepsheep
-
-env = sheepsheep.Environment(stack_use_plane=False)
-env.interactive()
-```
-
-# Simple Code
-```Python
 import sheepsheep
 import cv2
 import numpy as np
@@ -22,7 +8,7 @@ action = np.random.choice(np.where(state[1].reshape(-1) == 2)[0])
 
 while True:
     print(f"Action is {action}")
-    
+
     # action -> [0, 334)
     # body[18x18] + external[3] + stack[4] + button[3]
     state, reward, done = env.step_serial(action)
@@ -56,4 +42,3 @@ while True:
     action = np.random.choice(np.where(state[1].reshape(-1) == 2)[0])
 
 cv2.destroyAllWindows()
-```
